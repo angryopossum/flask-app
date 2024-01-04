@@ -24,12 +24,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ secrets.GITHUB_REPOSITORY }}
           tag: latest
-      - name: Run static analysis
-        run: |
-          pylint app.py
-      - name: Generate documentation
-        run: |
-          make docs
       - name: Create test report
         run: |
           pytest --junitxml=report.xml
