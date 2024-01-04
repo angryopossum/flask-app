@@ -24,6 +24,3 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ secrets.GITHUB_REPOSITORY }}
           tag: latest
-      - name: Create test report
-        run: |
-          pytest --junitxml=report.xml
