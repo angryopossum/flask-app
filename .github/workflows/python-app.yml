@@ -19,6 +19,6 @@ jobs:
           GHCR_USERNAME: ${{ secrets.GHCR_USERNAME2 }}
           GHCR_TOKEN: ${{ secrets.GHCR_TOKEN2 }}
         run: |
-          docker build -t flask-app .
+          docker build -t flask-app -t ghcr.io/${{ github.repository }}/flask-app:latest .
           echo $GHCR_TOKEN | docker login ghcr.io -u $GHCR_USERNAME --password-stdin
           docker push ghcr.io/${{ github.repository }}/flask-app:latest
